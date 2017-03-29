@@ -13,3 +13,17 @@ Now you're ready to build a Tesseract container on Jetstream, push it
 to Dockerhub, and convert it to run as a Singularity container on
 Jetstream, Savio, or anyehwere else that you have the Singularity
 container runtime installed.
+
+```bash
+git clone https://github.com/aculich/tesseract-containerized
+cd tesseract-containerized
+docker build --rm --tag tesseract .
+docker tag tesseract:latest aculich/tesseract:latest
+docker push aculich/tesseract:latest
+docker images
+sudo singularity create --size 375 tesseract.img
+sudo singularity import tesseract.img docker://aculich/tesseract:latest
+singularity exec tesseract.img tesseract -v
+```
+
+[![asciicast](https://asciinema.org/a/42f9r49pqhcf42c8atb6eeat8.png)](https://asciinema.org/a/42f9r49pqhcf42c8atb6eeat8)
