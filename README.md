@@ -13,5 +13,5 @@ docker tag tesseract:latest mauricemanning/tesseract:latest
 docker push mauricemanning/tesseract:latest
 docker images
 singularity pull docker://mmmanning/tesseract:latest 
-singularity exec tesseract.img tesseract -v
+singularity exec tesseract-latest.img tesseract -v
 ```
