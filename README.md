@@ -9,8 +9,8 @@ else that you have the Singularity container runtime installed.
 git clone https://github.com/mauricemanning/tesseract-containerized
 cd tesseract-containerized
 docker build --rm --tag tesseract .
-docker tag tesseract:latest mauricemanning/tesseract:latest
-docker push mauricemanning/tesseract:latest
+docker tag tesseract:latest mmmanning/tesseract:latest
+docker push mmmanning/tesseract:latest
 docker images
 singularity pull docker://mmmanning/tesseract:latest 
 singularity exec tesseract-latest.img tesseract -v
